@@ -41,9 +41,6 @@ Plugin 'Yggdroot/indentLine'
 " vim wiki
 Plugin 'vimwiki/vimwiki'
 
-" Go
-Plugin 'fatih/vim-go'
-
 " Define FZF Commands
 command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
 
@@ -70,7 +67,6 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 
 filetype on
-execute pathogen#infect()
 " syntax on
 filetype plugin indent on
 
