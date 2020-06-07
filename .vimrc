@@ -29,6 +29,7 @@ Plugin 'git://git.wincent.com/command-t.git'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 " FZF
 set rtp+=/usr/local/opt/fzf
+Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 
 " Rust
