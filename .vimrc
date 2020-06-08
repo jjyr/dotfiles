@@ -68,7 +68,7 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 
 filetype on
-" syntax on
+syntax on
 filetype plugin indent on
 
 " enable rust ctags support
