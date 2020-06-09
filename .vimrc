@@ -85,11 +85,10 @@ autocmd BufRead *.rs :setlocal tags=./rusty-tags.vi;/,$RUST_SRC_PATH/rusty-tags.
 map <C-P> :Files<CR>
 map <C-L> :Find<CR>
 
-" colorscheme photon
+" colorscheme
 
-hi Normal     ctermbg=NONE guibg=NONE
-hi LineNr     ctermbg=NONE guibg=NONE
-hi SignColumn ctermbg=NONE guibg=NONE
+hi SpellCap     cterm=underline ctermbg=white ctermfg=red
+hi SpellBad     cterm=underline ctermbg=red ctermfg=white
 
 " Setup syntastic
 set statusline+=%#warningmsg#
