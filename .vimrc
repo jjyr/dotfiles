@@ -142,17 +142,18 @@ function Get_visual_selection()
     endif
     let lines[-1] = lines[-1][: column_end - (&selection == 'inclusive' ? 1 : 2)]
     let lines[0] = lines[0][column_start - 1:]
-    return join(lines, "\n")
+    return lines
 endfunction
 
 function CopyToWindows()
-  let content = shellescape(Get_visual_selection())
-  if content != ""
-    execute "!" . 'echo' . ' ' . content . ' | ' . ' clip.exe'
+  let content = Get_visual_selection()
+  if join(content) != ""
+    call writefile(content, '/tmp/clipboard')
+    silent execute "!" . 'clip.exe < /tmp/clipboard'
   endif
 endfunction
 
-noremap <F2> :call CopyToWindows()<CR>
+noremap <silent> <F2> :<C-U>:call CopyToWindows()<CR>
 
 set et
 set sw=2
