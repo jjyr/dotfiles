@@ -1,6 +1,5 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
-
 set autoread
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -121,6 +120,16 @@ inoremap ''     ''
 inoremap "      ""<Left>
 inoremap "<CR>  "<CR>"<Esc>O
 inoremap ""     ""
+
+" Past
+function Paste()
+  let content = system("powershell.exe -NoLogo -NoProfile -NonInteractive -Command Get-Clipboard | sed 's/\r$//'")
+  set paste
+  execute 'normal! i' . content . "\<ESC>"
+  set nopaste
+endfunction
+
+nnoremap <C-x>p :call Paste()<CR>
 
 set et
 set sw=2
