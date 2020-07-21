@@ -50,7 +50,6 @@ command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-h
 " Plugin 'ascenator/L9', {'name': 'newL9'}
 Bundle 'vim-ruby/vim-ruby'
 
-
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -162,3 +161,12 @@ set bs=2
 set conceallevel=0
 set guifont=Monaco:h13
 set visualbell t_vb=
+
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
+
+colorscheme desert
+
