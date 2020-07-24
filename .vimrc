@@ -35,9 +35,6 @@ Plugin 'junegunn/fzf.vim'
 Plugin 'rust-lang/rust.vim'
 Plugin 'vim-syntastic/syntastic'
 
-" IdentLine
-Plugin 'Yggdroot/indentLine'
-
 " vim wiki
 Plugin 'vimwiki/vimwiki'
 
@@ -81,7 +78,7 @@ autocmd BufRead *.rs :setlocal tags=./rusty-tags.vi;/,$RUST_SRC_PATH/rusty-tags.
 
 " key bindings
 map <C-P> :Files<CR>
-map <C-L> :Find<CR>
+map <C-S> :Find<CR>
 
 " colorscheme
 
